@@ -13,7 +13,7 @@
         <h:outputScript name="jquery/jquery.js" library="primefaces" target="head"/>
 
         <f:metadata>
-            <o:viewParam name="fabricante" value="#{cadastroFabricanteBean.fabricante}" />
+            <f:viewParam name="fabricante"/>
             <f:event type="preRenderView" listener="#{pesquisaFabricanteBean.inicializar}"/>
         </f:metadata>
 

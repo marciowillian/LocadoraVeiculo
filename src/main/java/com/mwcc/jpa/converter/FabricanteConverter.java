@@ -24,6 +24,9 @@ public class FabricanteConverter implements Converter{
 
         if (s != null){
 
+            retorno = this.fabricanteDAO.buscaPorId(new Long(s));
+
+            // retorno = this.fabricanteDAO.buscarPeloCodigo(new Long(value));
         }
 
         return null;

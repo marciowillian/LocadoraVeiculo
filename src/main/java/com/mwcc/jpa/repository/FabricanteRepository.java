@@ -16,4 +16,6 @@ public class FabricanteRepository implements Serializable{
     public List<Fabricante> fabricantes(){
         return manager.createQuery("from Fabricante ", Fabricante.class).getResultList();
     }
+
+
 }
