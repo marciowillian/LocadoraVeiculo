@@ -29,7 +29,7 @@
             </p:toolbar>
 
             <p:dataTable id="fabricantesTable" value="#{pesquisaFabricanteBean.fabricantes}" var="fabricante"
-                         style="margin-top: 20px" emptyMessage="Nenhum fabricante encontrado." rows="20"
+                         style="margin-top: 20px" emptyMessage="Nenhum fabricante encontrado." rows="10"
                          paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom">
                 <p:column headerText="Código" style="text-align: center; width: 100px">
                     <h:outputText value="#{fabricante.codigo}" />
@@ -43,7 +43,7 @@
                     </p:button>
                     <p:commandButton icon="ui-icon-trash" title="Excluir" onclick="PF('confirmacaoExclusao').show();"
                                      process="@this" >
-                        <f:setPropertyActionListener target="#{cadastroFabricanteBean.fabricanteSelecionado}" value="#{fabricante}" />
+                        <f:setPropertyActionListener target="#{pesquisaFabricanteBean.fabricanteSelecionado}" value="#{fabricante}" />
                     </p:commandButton>
                 </p:column>
             </p:dataTable>
@@ -52,7 +52,7 @@
                              message="Tem certeza que deseja excluir o fabricante?"
                              header="Exclusão de fabricante" severity="alert">
                 <p:button value="Não" onclick="PF('confirmacaoExclusao').hide(); return false;" />
-                <p:commandButton value="Sim" onclick="PF('confirmacaoExclusao').hide();"/>
+                <p:commandButton value="Sim" onclick="PF('confirmacaoExclusao').hide();" action="#{pesquisaFabricanteBean.excluir}"/>
             </p:confirmDialog>
         </h:form>
     </ui:define>

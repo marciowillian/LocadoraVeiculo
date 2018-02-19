@@ -2,6 +2,7 @@ package com.mwcc.jpa.model;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "fabricante")
@@ -20,6 +21,7 @@ public class Fabricante {
         this.codigo = codigo;
     }
 
+    @NotNull
     @Column
     public String getNome() {
         return nome;

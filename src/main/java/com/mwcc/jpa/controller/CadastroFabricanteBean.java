@@ -38,6 +38,7 @@ public class CadastroFabricanteBean implements Serializable {
         try {
             this.cadastroFabricanteService.salvar(fabricante);
             FacesUtil.addInfoMessage("Fabricante salvo com sucesso!");
+            limpar();
         }catch (NegocioException e){
             FacesUtil.addErrorMessage(e.getMessage());
         }

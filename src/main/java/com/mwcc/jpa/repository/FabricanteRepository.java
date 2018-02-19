@@ -1,5 +1,6 @@
 package com.mwcc.jpa.repository;
 
+import com.mwcc.jpa.dao.FabricanteDAO;
 import com.mwcc.jpa.model.Fabricante;
 
 import javax.inject.Inject;
@@ -13,9 +14,11 @@ public class FabricanteRepository implements Serializable{
     @Inject
     private EntityManager manager;
 
+    @Inject
+    private FabricanteDAO fabricanteDAO;
+
     public List<Fabricante> fabricantes(){
         return manager.createQuery("from Fabricante ", Fabricante.class).getResultList();
     }
-
 
 }
